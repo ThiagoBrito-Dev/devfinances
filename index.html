@@ -19,6 +19,7 @@
     <header>
       <img src="assets/logo.svg" alt="Logo Dev Finances" />
     </header>
+
     <main class="container">
       <section id="balance">
         <h2 class="screen-reader-only">Balanço</h2>
@@ -51,7 +52,9 @@
       <section id="transaction">
         <h2 class="screen-reader-only">Transações</h2>
 
-        <a href="#" class="button new-transaction">+ Nova Transação</a>
+        <a href="#" class="button new-transaction" onclick="Modal.open()"
+          >+ Nova Transação</a
+        >
 
         <table id="data-table">
           <thead>
@@ -91,10 +94,56 @@
         </table>
       </section>
     </main>
+
     <div class="modal-overlay">
-      <div class="modal">Modal Content</div>
+      <div class="modal">
+        <div id="form">
+          <h2>Nova Transação</h2>
+
+          <div class="input-group">
+            <label for="description" class="screen-reader-only"
+              >Descrição</label
+            >
+            <input
+              type="text"
+              id="description"
+              name="description"
+              placeholder="Descrição"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="amount" class="screen-reader-only">Valor</label>
+            <input
+              type="number"
+              id="amount"
+              name="amount"
+              step="0.01"
+              placeholder="R$ 0,00"
+            />
+            <small class="help"
+              >Use o sinal de "-" (menos) para despesas e "," (vírgula) para
+              casas decimais</small
+            >
+          </div>
+
+          <div class="input-group">
+            <label for="date" class="screen-reader-only">Data</label>
+            <input type="date" id="date" name="date" />
+          </div>
+
+          <div class="input-group actions">
+            <a href="#" class="button cancel" onclick="Modal.close()"
+              >Cancelar</a
+            >
+            <button type="submit">Salvar</button>
+          </div>
+        </div>
+      </div>
     </div>
+
     <footer class="container"><p>2021 - dev.finance$</p></footer>
+
     <script src="script.js"></script>
   </body>
 </html>
