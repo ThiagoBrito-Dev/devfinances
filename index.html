@@ -29,7 +29,7 @@
             <h3>Entradas</h3>
             <img src="assets/income.svg" alt="Imagem de Entradas" />
           </div>
-          <p>R$ 5.000,00</p>
+          <p id="incomes-display"></p>
         </div>
 
         <div class="card">
@@ -37,7 +37,7 @@
             <h3>Saídas</h3>
             <img src="assets/expense.svg" alt="Imagem de Saídas" />
           </div>
-          <p>R$ 2.000,00</p>
+          <p id="expenses-display"></p>
         </div>
 
         <div class="card highlighted">
@@ -45,14 +45,14 @@
             <h3>Total</h3>
             <img src="assets/total.svg" alt="Imagem de Total" />
           </div>
-          <p>R$ 3.000,00</p>
+          <p id="total-display"></p>
         </div>
       </section>
 
       <section id="transaction">
         <h2 class="screen-reader-only">Transações</h2>
 
-        <a href="#" class="button new-transaction" onclick="Modal.open()"
+        <a href="#" class="button new-transaction" onclick="Modal.toggle()"
           >+ Nova Transação</a
         >
 
@@ -65,32 +65,7 @@
               <th></th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class="decription">Luz</td>
-              <td class="expense">- R$ 500,00</td>
-              <td>29/07/2021</td>
-              <td>
-                <img src="assets/minus.svg" alt="Remover transação" />
-              </td>
-            </tr>
-            <tr>
-              <td class="decription">Criação de Website</td>
-              <td class="income">R$ 5.000,00</td>
-              <td>29/07/2021</td>
-              <td>
-                <img src="assets/minus.svg" alt="Remover transação" />
-              </td>
-            </tr>
-            <tr>
-              <td class="decription">Internet</td>
-              <td class="expense">- R$ 200,00</td>
-              <td>29/07/2021</td>
-              <td>
-                <img src="assets/minus.svg" alt="Remover transação" />
-              </td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </section>
     </main>
@@ -133,7 +108,7 @@
           </div>
 
           <div class="input-group actions">
-            <a href="#" class="button cancel" onclick="Modal.close()"
+            <a href="#" class="button cancel" onclick="Modal.toggle()"
               >Cancelar</a
             >
             <button type="submit">Salvar</button>
