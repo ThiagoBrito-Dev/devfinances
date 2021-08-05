@@ -164,6 +164,16 @@ body main section#transaction table#data-table tbody tr td.expense {
   color: var(--red);
 }
 
+body main section#transaction table#data-table tbody tr td:last-child {
+  display: flex;
+}
+
+body main section#transaction table#data-table tbody tr td:last-child button {
+  font-size: 0;
+  background: transparent;
+  border: none;
+}
+
 body div.modal-overlay {
   display: flex;
   justify-content: center;
@@ -212,7 +222,7 @@ body div.modal-overlay div.modal div#form div.input-group input {
   padding: 0.8rem;
 }
 
-body div.modal-overlay div.modal div#form div.input-group small {
+body div.modal-overlay div.modal div#form div.input-group small.help {
   opacity: 0.4;
 }
 
