@@ -1,24 +1,3 @@
-const transactions = [
-  {
-    id: 1,
-    description: "Luz",
-    amount: -50000,
-    date: "29/07/2021",
-  },
-  {
-    id: 2,
-    description: "Website",
-    amount: 500000,
-    date: "29/07/2021",
-  },
-  {
-    id: 3,
-    description: "Internet",
-    amount: -20000,
-    date: "29/07/2021",
-  },
-];
-
 const Modal = {
   toggle() {
     const modalOverlay = document.querySelector(".modal-overlay");
@@ -26,19 +5,31 @@ const Modal = {
   },
 };
 
+const Storage = {
+  get() {
+    const transactions = JSON.parse(localStorage.getItem("transactions"));
+    return transactions || [];
+  },
+  set(transactions) {
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+  },
+};
+
 const Transaction = {
+  all: Storage.get(),
+
   add(transaction) {
-    transactions.push(transaction);
+    Transaction.all.push(transaction);
     App.reload();
   },
   remove(index) {
-    transactions.splice(index, 1);
+    Transaction.all.splice(index, 1);
     App.reload();
   },
   sumIncomes() {
     let incomes = 0;
 
-    transactions.forEach((transaction) => {
+    Transaction.all.forEach((transaction) => {
       if (transaction.amount > 0) {
         incomes += transaction.amount;
       }
@@ -49,7 +40,7 @@ const Transaction = {
   sumExpenses() {
     let expenses = 0;
 
-    transactions.forEach((transaction) => {
+    Transaction.all.forEach((transaction) => {
       if (transaction.amount < 0) {
         expenses += transaction.amount;
       }
@@ -124,7 +115,7 @@ const Utils = {
     return formattedAmount;
   },
   formatAmount(value) {
-    const formattedValue = Number(value.replace(/\,\./g, "")) * 100;
+    const formattedValue = Math.round(value * 100);
     return formattedValue;
   },
   formatDate(value) {
@@ -191,10 +182,10 @@ const Form = {
 
 const App = {
   initialize() {
-    transactions.forEach((transaction, index) => {
+    Transaction.all.forEach((transaction, index) => {
       DOM.addTransaction(transaction, index);
     });
-
+    Storage.set(Transaction.all);
     DOM.updateBalance();
   },
   reload() {
