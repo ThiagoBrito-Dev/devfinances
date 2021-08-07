@@ -46,20 +46,20 @@ body main.container {
   border-width: 0;
 }
 
-body main section#balance {
-  margin-top: -8rem;
-}
-
 body h2 {
   font-weight: 400;
   margin-bottom: 0.8rem;
 }
 
-body main section#balance h2 {
+body main section#balance {
+  margin-top: -8rem;
+}
+
+section#balance h2 {
   color: #fff;
 }
 
-body main section#balance div.card {
+section#balance div.card {
   background-color: #fff;
   color: var(--dark-blue);
 
@@ -69,23 +69,23 @@ body main section#balance div.card {
   margin-bottom: 2rem;
 }
 
-body main section#balance div.card div {
+div.card div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-body main section#balance div.card div h3 {
+div.card div h3 {
   font-weight: 400;
   font-size: 1rem;
 }
 
-body main section#balance div.card p {
+div.card p {
   font-size: 2rem;
   margin-top: 1rem;
 }
 
-body main section#balance div.card.highlighted {
+section#balance div.card.highlighted {
   background-color: var(--green);
   color: #fff;
 }
@@ -95,42 +95,42 @@ body main section#transaction {
   overflow-x: auto;
 }
 
-body main section#transaction h2 {
+section#transaction h2 {
   margin-top: 3.2rem;
   color: var(--dark-blue);
 }
 
-body main section#transaction a {
+section#transaction a {
   color: var(--green);
   text-decoration: none;
 }
 
-body main section#transaction a:hover {
+section#transaction a:hover {
   color: var(--light-green);
 }
 
-body main section#transaction a.button.new-transaction {
+section#transaction a.button.new-transaction {
   display: inline-block;
   margin-bottom: 0.8rem;
 }
 
-body main section#transaction table#data-table {
+section#transaction table#data-table {
   width: 100%;
   color: #969cb3;
   border-spacing: 0 0.5rem;
 }
 
-body main section#transaction table#data-table thead tr th:first-child,
-body main section#transaction table#data-table tbody tr td:first-child {
+table#data-table thead tr th:first-child,
+table#data-table tbody tr td:first-child {
   border-radius: 0.25rem 0 0 0.25rem;
 }
 
-body main section#transaction table#data-table thead tr th:last-child,
-body main section#transaction table#data-table tbody tr td:last-child {
+table#data-table thead tr th:last-child,
+table#data-table tbody tr td:last-child {
   border-radius: 0 0.25rem 0.25rem 0;
 }
 
-body main section#transaction table#data-table thead tr th {
+table#data-table thead tr th {
   background-color: #fff;
 
   font-weight: 400;
@@ -138,37 +138,37 @@ body main section#transaction table#data-table thead tr th {
   padding: 1rem 2rem;
 }
 
-body main section#transaction table#data-table tbody tr {
+table#data-table tbody tr {
   opacity: 0.75;
   transition-duration: 0.2s;
 }
 
-body main section#transaction table#data-table tbody tr:hover {
+table#data-table tbody tr:hover {
   opacity: 1;
 }
 
-body main section#transaction table#data-table tbody tr td {
+table#data-table tbody tr td {
   background-color: #fff;
   padding: 1rem 2rem;
 }
 
-body main section#transaction table#data-table tbody tr td.description {
+table#data-table tbody tr td.description {
   color: var(--dark-blue);
 }
 
-body main section#transaction table#data-table tbody tr td.income {
+table#data-table tbody tr td.income {
   color: #12a454;
 }
 
-body main section#transaction table#data-table tbody tr td.expense {
+table#data-table tbody tr td.expense {
   color: var(--red);
 }
 
-body main section#transaction table#data-table tbody tr td:last-child {
+table#data-table tbody tr td:last-child {
   display: flex;
 }
 
-body main section#transaction table#data-table tbody tr td:last-child button {
+table#data-table tbody tr td:last-child button {
   font-size: 0;
   background: transparent;
   border: none;
@@ -196,24 +196,24 @@ body div.modal-overlay.active {
   visibility: visible;
 }
 
-body div.modal-overlay div.modal {
+div.modal-overlay div.modal {
   background-color: var(--white-ice);
   padding: 2.4rem;
 }
 
-body div.modal-overlay div.modal div#form {
+div.modal div#form {
   max-width: 500px;
 }
 
-body div.modal-overlay div.modal div#form h2 {
+div#form h2 {
   color: var(--dark-blue);
 }
 
-body div.modal-overlay div.modal div#form div + div {
+div#form div + div {
   margin-top: 0.8rem;
 }
 
-body div.modal-overlay div.modal div#form div.input-group input {
+div#form div.input-group input {
   width: 100%;
 
   border: none;
@@ -222,11 +222,11 @@ body div.modal-overlay div.modal div#form div.input-group input {
   padding: 0.8rem;
 }
 
-body div.modal-overlay div.modal div#form div.input-group small.help {
+div.input-group small.help {
   opacity: 0.4;
 }
 
-body div.modal-overlay div.modal div#form div.input-group.actions {
+div#form div.input-group.actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
