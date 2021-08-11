@@ -17,6 +17,10 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
   background-color: var(--white-ice);
   font-family: "Poppins", sans-serif;
 }
@@ -29,7 +33,7 @@ body header {
 
 body main.container {
   width: min(90vw, 800px);
-  margin: auto;
+  margin: 0 auto;
 }
 
 .screen-reader-only {
@@ -52,7 +56,11 @@ body h2 {
 }
 
 body main section#balance {
-  margin-top: -8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  margin: -8rem 0 2rem;
 }
 
 section#balance h2 {
@@ -65,8 +73,6 @@ section#balance div.card {
 
   padding: 1.5rem 2rem;
   border-radius: 0.25rem;
-
-  margin-bottom: 2rem;
 }
 
 div.card div {
@@ -172,6 +178,7 @@ table#data-table tbody tr td:last-child button {
   font-size: 0;
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 body div.modal-overlay {
@@ -273,7 +280,8 @@ body footer {
   color: var(--dark-blue);
   text-align: center;
 
-  padding: 4rem 0 2rem;
+  margin-top: auto;
+  padding: 2.75rem 0 1.5rem;
   opacity: 0.6;
 }
 
@@ -283,8 +291,10 @@ body footer {
   }
 
   body main section#balance {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    flex-direction: row;
+  }
+
+  section#balance div.card {
+    width: 100%;
   }
 }

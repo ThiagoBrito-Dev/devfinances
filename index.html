@@ -15,7 +15,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body onkeydown="App.handleKeyboardActions(event)">
     <header>
       <img src="assets/logo.svg" alt="Logo Dev Finances" />
     </header>
@@ -59,10 +59,10 @@
         <table id="data-table">
           <thead>
             <tr>
-              <th>Descrição</th>
-              <th>Valor</th>
-              <th>Data</th>
-              <th></th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Data</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -91,10 +91,10 @@
             <div class="input-group">
               <label for="amount" class="screen-reader-only">Valor</label>
               <input
-                type="number"
+                type="text"
                 id="amount"
                 name="amount"
-                step="0.01"
+                oninput="Utils.formatInputAmount()"
                 placeholder="R$ 0,00"
               />
               <small class="help"

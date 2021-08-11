@@ -1,7 +1,7 @@
 const Modal = {
+  overlay: document.querySelector(".modal-overlay"),
   toggle() {
-    const modalOverlay = document.querySelector(".modal-overlay");
-    modalOverlay.classList.toggle("active");
+    Modal.overlay.classList.toggle("active");
   },
 };
 
@@ -115,12 +115,53 @@ const Utils = {
     return formattedAmount;
   },
   formatAmount(value) {
-    const formattedValue = Math.round(value * 100);
+    let mathSign = "";
+
+    if (value[0] === "-") {
+      mathSign = "-";
+      value = value.slice(1);
+    }
+
+    value = Number(value.replace(/[^0-9\,]/g, "").replace(",", "."));
+    const formattedValue = Number(mathSign + Math.round(value * 100));
     return formattedValue;
   },
   formatDate(value) {
     const formattedValue = value.split("-").reverse().join("/");
     return formattedValue;
+  },
+  formatInputAmount() {
+    if (Form.amountElement.value.indexOf(",") === -1) {
+      let mathSign = "";
+      let amount = Form.amountElement.value;
+
+      if (Form.amountElement.value[0] === "-") {
+        mathSign = "-";
+        amount = Form.amountElement.value.slice(1);
+      }
+
+      amount = amount.replace(/\D/g, "");
+
+      if (amount !== "") {
+        amount = Number(amount).toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+          minimumFractionDigits: 0,
+        });
+
+        Form.amountElement.value = mathSign + amount;
+      }
+    } else {
+      const splittedAmount = Form.amountElement.value.split(",");
+      const lastPosition = splittedAmount.length - 1;
+
+      if (splittedAmount.length > 2 && splittedAmount[lastPosition] === "") {
+        splittedAmount.pop();
+      }
+
+      splittedAmount[1] = splittedAmount[1].replace(/\D/g, "");
+      Form.amountElement.value = splittedAmount.join(",");
+    }
   },
 };
 
@@ -191,6 +232,20 @@ const App = {
   reload() {
     DOM.clearTransactions();
     App.initialize();
+  },
+  handleKeyboardActions(event) {
+    switch (event.key) {
+      case "+":
+        if (!Modal.overlay.classList.value.includes("active")) {
+          Modal.toggle();
+        }
+        break;
+      case "Escape":
+        if (Modal.overlay.classList.value.includes("active")) {
+          Modal.toggle();
+        }
+        break;
+    }
   },
 };
 
