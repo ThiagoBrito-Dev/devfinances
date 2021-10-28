@@ -17,12 +17,10 @@
   </p>
 
   <div>
-    <a href="https://my-devfinances.netlify.app/">
-      <img src="https://api.netlify.com/api/v1/badges/9b72fcc5-646a-405f-8926-d69613f41f19/deploy-status" />
-    </a>
     <img src="https://img.shields.io/github/license/ThiagoBrito-Dev/Podcastr?color=49aa26&style=for-the-badge" />
+    <a href="https://my-devfinances.netlify.app/">
+      <img src="https://api.netlify.com/api/v1/badges/9b72fcc5-646a-405f-8926-d69613f41f19/deploy-status" /></a>
     <img src="https://img.shields.io/static/v1?label=version&message=1.0.0&color=49aa26&style=for-the-badge" />
-    <img src="https://img.shields.io/static/v1?label=yarn&message=v1.22.5&color=49aa26&style=for-the-badge" />
   </div>
 </div>
 
